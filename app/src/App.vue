@@ -1,20 +1,40 @@
+import InputText from "primevue/inputtext";
+
 <template>
   <div>
-    <Editor v-model="value2" editorStyle="height: 320px">
-      <template v-slot:toolbar>
-        <span class="ql-formats">
-          <button class="ql-bold" v-tooltip.bottom="'Bold'"></button>
-          <button class="ql-italic" v-tooltip.bottom="'Italic'"></button>
-          <button class="ql-underline" v-tooltip.bottom="'Underline'"></button>
-        </span>
-      </template>
-    </Editor>
+    <InputText v-model="text" />
+    <Button label="greet" icon="pi pi-user" @click="greet" />
+    <br />
+    <br />
+    <textarea
+      disabled
+      name=""
+      id=""
+      cols="50"
+      v-model="text"
+      rows="7"
+      style="font-size: 35px; border: 5px solid"
+    ></textarea>
+    <Toast />
   </div>
 </template>
 
 <script>
 export default {
-  
+  data() {
+    return {
+      text: null,
+    };
+  },
+  methods: {
+    greet() {
+      this.$toast.add({
+        severity: "info",
+        summary: "sorry ☹",
+        detail: "this is not available ",
+      });
+    },
+  },
 };
 </script>
 
