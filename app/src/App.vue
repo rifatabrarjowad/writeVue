@@ -1,17 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Editor v-model="value2" editorStyle="height: 320px">
+      <template v-slot:toolbar>
+        <span class="ql-formats">
+          <button class="ql-bold" v-tooltip.bottom="'Bold'"></button>
+          <button class="ql-italic" v-tooltip.bottom="'Italic'"></button>
+          <button class="ql-underline" v-tooltip.bottom="'Underline'"></button>
+        </span>
+      </template>
+    </Editor>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  
+};
 </script>
 
 <style>
